@@ -95,6 +95,23 @@
             background-color: #0056b3;
         }
 
+        .retirement-finance-info {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            width: 80%; /* 调整宽度以适应内容 */
+        }
+
+        .retirement-finance-info.show {
+            display: block;
+        }
+
         /* 移动端适配 */
         @media (max-width: 768px) {
             .services {
@@ -127,6 +144,10 @@
                 width: 80%;  /* 移动端按钮加宽 */
                 font-size: 1em;
             }
+
+            .retirement-finance-info {
+                width: 90%; /* 移动端调整宽度 */
+            }
         }
 
         /* 小屏幕手机适配 */
@@ -141,6 +162,10 @@
 
             .service-card p {
                 font-size: 0.85em;
+            }
+
+            .retirement-finance-info {
+                width: 95%; /* 小屏幕手机调整宽度 */
             }
         }
 
@@ -159,6 +184,11 @@
 <body>
     <div class="header">
         <h1>养老金融服务平台</h1>
+        <a href="javascript:void(0)" class="btn" onclick="document.querySelector('.retirement-finance-info').classList.toggle('show')">了解您的养老金</a>
+        <div class="retirement-finance-info">
+            <p>什么是养老金融？</p>
+            <p>为积极应对人口老龄化、满足人民日益增长的美好养老生活需要...</p>
+        </div>
     </div>
 
     <div class="container">
