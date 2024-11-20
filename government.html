@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>政务查询 - 养老金融服务</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Microsoft YaHei', sans-serif;
+            background-color: #f5f5f5;
+            overflow-x: hidden;
+        }
+
+        .header {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #fff;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .back-btn {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #007bff;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+
+        .header h1 {
+            color: #333;
+            font-size: 1.5em;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 15px;
+        }
+
+        .service-item {
+            background: #fff;
+            padding: 30px 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .service-item h2 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+            display: flex;
+            align-items: center;
+        }
+
+        .service-item h2 i {
+            margin-right: 10px;
+            color: #007bff;
+        }
+
+        .service-item p {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.5;
+            font-size: 0.95em;
+        }
+
+        .btn {
+            display: inline-block;
+            width: 100%;
+            padding: 12px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid #007bff;
+            color: #007bff;
+        }
+
+        .btn-outline:hover {
+            background-color: #f0f7ff;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="index.html" class="back-btn">
+            <i class="fas fa-arrow-left"></i>
+        </a>
+        <h1>政务查询</h1>
+    </div>
+
+    <div class="container">
+        <div class="service-item">
+            <h2>
+                <i class="fas fa-piggy-bank"></i>
+                个人养老金账户
+            </h2>
+            <p>查询您的个人养老金账户信息，了解账户状态和资金情况。</p>
+            <a href="https://www.wmslz.com/s/ZmDnj4H95gX" class="btn">立即查询</a>
+        </div>
+        
+            <!-- 新增养老机构查询 -->
+    <div class="service-item">
+        <h2>
+            <i class="fas fa-home"></i>
+            养老机构查询
+        </h2>
+        <p>查询周边养老机构信息，了解服务内容和收费标准。</p>
+        <a href="https://www.wmslz.com/s/iOvUsY19560" class="btn">立即查询</a>
+    </div>
+
+    <!-- 新增助餐服务查询 -->
+    <div class="service-item">
+        <h2>
+            <i class="fas fa-utensils"></i>
+            助餐服务查询
+        </h2>
+        <p>查询周边助餐点信息，了解配餐服务和优惠政策。</p>
+        <a href="https://www.wmslz.com/s/nVajSvY95Zz" class="btn">立即查询</a>
+    </div>
+
+
+        
+        <div class="service-item">
+            <h2>
+                <i class="fas fa-book-reader"></i>
+                养老政策解读
+            </h2>
+            <p>了解最新养老政策动态，获取专业政策解读和指导。</p>
+            <a href="#" class="btn btn-outline">敬请期待</a>
+        </div>
+    </div>
+</body>
+</html>
