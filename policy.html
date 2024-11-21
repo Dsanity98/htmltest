@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>养老政策解读</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Microsoft YaHei', sans-serif;
+            background-color: #f5f5f5;
+            overflow-x: hidden;
+        }
+
+        .header {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #fff;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .back-btn {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #007bff;
+            text-decoration: none;
+            font-size: 1.2em;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .header h1 {
+            color: #333;
+            font-size: 1.5em;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 15px;
+        }
+
+        .policy-list {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .policy-item {
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .policy-item:last-child {
+            border-bottom: none;
+        }
+
+        .policy-item:hover {
+            background-color: #f8f9fa;
+        }
+
+        .policy-icon {
+            color: #007bff;
+            font-size: 1.5em;
+            margin-right: 15px;
+        }
+
+        .policy-info {
+            flex: 1;
+        }
+
+        .policy-title {
+            color: #333;
+            font-size: 1.1em;
+            margin-bottom: 5px;
+        }
+
+        .policy-date {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .download-btn {
+            color: #007bff;
+            text-decoration: none;
+            padding: 8px 15px;
+            border: 1px solid #007bff;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .download-btn:hover {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            .policy-item {
+                padding: 15px;
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .policy-icon {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+
+            .policy-info {
+                margin-bottom: 10px;
+            }
+
+            .download-btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="government.html" class="back-btn">
+            <i class="fas fa-arrow-left"></i>
+            返回
+        </a>
+        <h1>养老政策解读</h1>
+    </div>
+
+    <div class="container">
+        <div class="policy-list">
+            <div class="policy-item">
+                <i class="fas fa-file-word policy-icon"></i>
+                <div class="policy-info">
+                    <div class="policy-title">上海市养老服务发展"十四五"规划</div>
+                    <div class="policy-date">发布日期：2024-01-15</div>
+                </div>
+                <a href="#" class="download-btn">下载</a>
+            </div>
+
+            <div class="policy-item">
+                <i class="fas fa-file-word policy-icon"></i>
+                <div class="policy-info">
+                    <div class="policy-title">上海市养老服务条例</div>
+                    <div class="policy-date">发布日期：2023-12-01</div>
+                </div>
+                <a href="#" class="download-btn">下载</a>
+            </div>
+
+            <div class="policy-item">
+                <i class="fas fa-file-pdf policy-icon"></i>
+                <div class="policy-info">
+                    <div class="policy-title">关于进一步推进本市养老服务高质量发展的实施意见</div>
+                    <div class="policy-date">发布日期：2023-10-20</div>
+                </div>
+                <a href="#" class="download-btn">下载</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
