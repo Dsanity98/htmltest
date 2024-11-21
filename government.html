@@ -16,13 +16,14 @@
             font-family: 'Microsoft YaHei', sans-serif;
             background-color: #f5f5f5;
             overflow-x: hidden;
+            color: #333;
         }
 
         .header {
             text-align: center;
             padding: 20px 0;
             background-color: #fff;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             position: relative;
         }
@@ -35,58 +36,74 @@
             color: #007bff;
             text-decoration: none;
             font-size: 1.2em;
+            display: flex;
+            align-items: center;
+            gap: 5px;
         }
 
         .header h1 {
             color: #333;
             font-size: 1.5em;
+            margin: 0;
         }
 
         .container {
-            width: 100%;
+            padding: 15px;
             max-width: 600px;
             margin: 0 auto;
-            padding: 15px;
         }
 
-        .service-item {
+        .service-card {
             background: #fff;
-            padding: 30px 20px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
-        .service-item h2 {
-            color: #333;
-            margin-bottom: 15px;
-            font-size: 1.2em;
+        .service-icon {
+            width: 50px;
+            height: 50px;
+            background-color: #f0f7ff;
+            border-radius: 12px;
             display: flex;
             align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
         }
 
-        .service-item h2 i {
-            margin-right: 10px;
+        .service-icon i {
+            font-size: 24px;
             color: #007bff;
         }
 
-        .service-item p {
+        .service-title {
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .service-desc {
             color: #666;
-            margin-bottom: 20px;
-            line-height: 1.5;
             font-size: 0.95em;
+            line-height: 1.5;
+            margin-bottom: 15px;
         }
 
         .btn {
-            display: inline-block;
+            display: block;
             width: 100%;
             padding: 12px 20px;
             background-color: #007bff;
             color: #fff;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 8px;
             text-align: center;
+            font-size: 1em;
             transition: background-color 0.3s ease;
+            border: none;
+            cursor: pointer;
         }
 
         .btn:hover {
@@ -107,6 +124,26 @@
             .container {
                 padding: 10px;
             }
+
+            .service-card {
+                padding: 15px;
+            }
+
+            .header h1 {
+                font-size: 1.3em;
+            }
+
+            .service-title {
+                font-size: 1.1em;
+            }
+
+            .service-desc {
+                font-size: 0.9em;
+            }
+
+            .btn {
+                padding: 10px 15px;
+            }
         }
     </style>
 </head>
@@ -119,44 +156,48 @@
     </div>
 
     <div class="container">
-        <div class="service-item">
-            <h2>
+        <div class="service-card">
+            <div class="service-icon">
                 <i class="fas fa-piggy-bank"></i>
-                个人养老金账户
-            </h2>
-            <p>查询您的个人养老金账户信息，了解账户状态和资金情况。</p>
+            </div>
+            <div class="service-title">个人养老金账户</div>
+            <div class="service-desc">
+                查询您的个人养老金账户信息，了解账户状态和资金情况。
+            </div>
             <a href="https://www.wmslz.com/s/ZmDnj4H95gX" class="btn">立即查询</a>
         </div>
-        
-            <!-- 新增养老机构查询 -->
-    <div class="service-item">
-        <h2>
-            <i class="fas fa-home"></i>
-            养老机构查询
-        </h2>
-        <p>查询周边养老机构信息，了解服务内容和收费标准。</p>
-        <a href="https://www.wmslz.com/s/iOvUsY19560" class="btn">立即查询</a>
-    </div>
 
-    <!-- 新增助餐服务查询 -->
-    <div class="service-item">
-        <h2>
-            <i class="fas fa-utensils"></i>
-            助餐服务查询
-        </h2>
-        <p>查询周边助餐点信息，了解配餐服务和优惠政策。</p>
-        <a href="https://www.wmslz.com/s/nVajSvY95Zz" class="btn">立即查询</a>
-    </div>
-
-
-        
-        <div class="service-item">
-            <h2>
+        <div class="service-card">
+            <div class="service-icon">
                 <i class="fas fa-book-reader"></i>
-                养老政策解读
-            </h2>
-            <p>了解最新养老政策动态，获取专业政策解读和指导。</p>
-            <a href="#" class="btn btn-outline">敬请期待</a>
+            </div>
+            <div class="service-title">养老政策解读</div>
+            <div class="service-desc">
+                了解最新养老政策动态，获取专业政策解读和指导。
+            </div>
+            <a href="policy.html" class="btn">立即查询</a>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">
+                <i class="fas fa-home"></i>
+            </div>
+            <div class="service-title">养老机构查询</div>
+            <div class="service-desc">
+                查询周边养老机构信息，了解服务内容和收费标准。
+            </div>
+            <a href="https://www.wmslz.com/s/iOvUsY19560" class="btn">立即查询</a>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">
+                <i class="fas fa-utensils"></i>
+            </div>
+            <div class="service-title">助餐服务查询</div>
+            <div class="service-desc">
+                查询周边助餐点信息，了解配餐服务和优惠政策。
+            </div>
+            <a href="https://www.wmslz.com/s/nVajSvY95Zz" class="btn">立即查询</a>
         </div>
     </div>
 </body>
