@@ -2,10 +2,10 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <!-- 添加移动端视口设置 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>养老金融服务</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <style>
         * {
             margin: 0;
@@ -16,8 +16,8 @@
         body {
             font-family: 'Microsoft YaHei', sans-serif;
             background-color: #f5f5f5;
-            /* 防止页面水平滚动 */
             overflow-x: hidden;
+            line-height: 1.6;
         }
 
         .container {
@@ -29,32 +29,44 @@
 
         .header {
             text-align: center;
-            padding: 20px 0;
+            padding: 20px 15px;
             background-color: #fff;
             margin-bottom: 20px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: relative;
         }
 
         .header h1 {
             color: #333;
             font-size: 1.8em;
-            /* 移动端文字大小调整 */
-            padding: 0 10px;
+            margin-bottom: 15px;
+        }
+
+        .header-btn {
+            display: inline-block;
+            padding: 8px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
         }
 
         .services {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
+            padding: 0 15px;
         }
 
         .service-card {
             background: #fff;
-            padding: 30px 20px;
-            border-radius: 10px;
+            padding: 25px 20px;
+            border-radius: 15px;
             text-align: center;
             transition: transform 0.3s ease;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
         .service-card:hover {
@@ -65,70 +77,132 @@
             font-size: 2.5em;
             color: #007bff;
             margin-bottom: 15px;
+            display: block;
         }
 
         .service-card h2 {
             color: #333;
             margin-bottom: 12px;
-            font-size: 1.2em;
+            font-size: 1.3em;
         }
 
         .service-card p {
             color: #666;
-            margin-bottom: 15px;
-            line-height: 1.5;
-            font-size: 0.95em;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            font-size: 1em;
+            padding: 0 10px;
         }
 
         .btn {
             display: inline-block;
-            padding: 8px 16px;
+            padding: 10px 25px;
             background-color: #007bff;
             color: #fff;
             text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-            font-size: 0.9em;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-size: 0.95em;
+            border: none;
+            cursor: pointer;
+            width: auto;
+            min-width: 150px;
         }
 
         .btn:hover {
             background-color: #0056b3;
+            transform: translateY(-2px);
         }
 
         .retirement-finance-info {
             display: none;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: #fff;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 1000;
             padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            width: 80%; /* 调整宽度以适应内容 */
         }
 
         .retirement-finance-info.show {
-            display: block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        /* 移动端适配 */
-        @media (max-width: 768px) {
-            .services {
-                grid-template-columns: 1fr;
-                gap: 15px;
-            }
+        .info-content {
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+        }
 
+        .close-btn {
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            font-size: 1.5em;
+            color: #666;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .info-content h3 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .info-content p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 768px) {
             .header h1 {
                 font-size: 1.5em;
             }
 
+            .services {
+                grid-template-columns: 1fr;
+                padding: 0 10px;
+            }
+
             .service-card {
-                padding: 25px 15px;
+                padding: 20px 15px;
             }
 
             .service-card i {
                 font-size: 2em;
+            }
+
+            .service-card h2 {
+                font-size: 1.2em;
+            }
+
+            .service-card p {
+                font-size: 0.95em;
+            }
+
+            .btn {
+                width: 80%;
+                padding: 12px 20px;
+            }
+
+            .info-content {
+                padding: 20px;
+                width: 95%;
+            }
+        }
+
+        @media (max-width: 320px) {
+            .header h1 {
+                font-size: 1.3em;
             }
 
             .service-card h2 {
@@ -140,80 +214,67 @@
             }
 
             .btn {
-                padding: 10px 20px;
-                width: 80%;  /* 移动端按钮加宽 */
-                font-size: 1em;
-            }
-
-            .retirement-finance-info {
-                width: 90%; /* 移动端调整宽度 */
-            }
-        }
-
-        /* 小屏幕手机适配 */
-        @media (max-width: 320px) {
-            .header h1 {
-                font-size: 1.3em;
-            }
-
-            .service-card h2 {
-                font-size: 1em;
-            }
-
-            .service-card p {
-                font-size: 0.85em;
-            }
-
-            .retirement-finance-info {
-                width: 95%; /* 小屏幕手机调整宽度 */
-            }
-        }
-
-        /* 添加触摸反馈 */
-        @media (hover: none) {
-            .service-card:active {
-                transform: translateY(-2px);
-            }
-
-            .btn:active {
-                background-color: #0056b3;
+                font-size: 0.9em;
+                padding: 10px 15px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>养老金融服务平台</h1>
-        <a href="javascript:void(0)" class="btn" onclick="document.querySelector('.retirement-finance-info').classList.toggle('show')">了解您的养老金</a>
-        <div class="retirement-finance-info">
-            <p>什么是养老金融？</p>
-            <p>为积极应对人口老龄化、满足人民日益增长的美好养老生活需要...</p>
+    <div id="app">
+        <div class="header">
+            <h1>养老金融平台</h1>
+            <a href="javascript:void(0)" class="header-btn" @click="showRetirementFinanceInfo">
+                了解您的养老金
+            </a>
+        </div>
+
+        <div class="container">
+            <div class="services">
+                <div class="service-card">
+                    <i class="fas fa-building"></i>
+                    <h2>政务查询</h2>
+                    <p>便捷办理养老相关政务服务，一站式查询各类养老政策信息。</p>
+                    <a href="government.html" class="btn">立即查询</a>
+                </div>
+
+                <div class="service-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h2>养老规划</h2>
+                    <p>专业的养老金融规划服务，助您合理配置养老资产。</p>
+                    <a href="#" class="btn">了解更多</a>
+                </div>
+
+                <div class="service-card">
+                    <i class="fas fa-home"></i>
+                    <h2>养老生活</h2>
+                    <p>丰富多彩的养老生活资讯，打造品质养老新生活。</p>
+                    <a href="https://res.yunbusiness.ccb.com/service/resource/mng/quickTopicsPage/2024/202409/20240912/20240912090000000114/ea86f808-66e1-4ac0-bc5b-5d86d81294cf/yiyangzhuanqu9/index.html?cityid=310000&userCityId=310000&ADID=20240806080000000015" class="btn">查看详情</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="retirement-finance-info" :class="{ show: isRetirementFinanceInfoVisible }">
+            <div class="info-content">
+                <span class="close-btn" @click="showRetirementFinanceInfo">&times;</span>
+                <h3>什么是养老金融？</h3>
+                <p>为积极应对人口老龄化、满足人民日益增长的美好养老生活需要...</p>
+            </div>
         </div>
     </div>
 
-    <div class="container">
-        <div class="services">
-            <div class="service-card">
-                <i class="fas fa-building"></i>
-                <h2>政务查询</h2>
-                <p>便捷办理养老相关政务服务，一站式查询各类养老政策信息。</p>
-                <a href="government.html" class="btn">立即查询</a>
-            </div>
-
-            <div class="service-card">
-                <i class="fas fa-chart-line"></i>
-                <h2>养老规划</h2>
-                <p>专业的养老金融规划服务，助您合理配置养老资产。</p>
-                <a href="#" class="btn">了解更多</a>
-            </div>
-
-            <div class="service-card">
-                <i class="fas fa-home"></i>
-                <h2>养老生活</h2>
-                <p>丰富多彩的养老生活资讯，打造品质养老新生活。</p>
-                <a href="https://res.yunbusiness.ccb.com/service/resource/mng/quickTopicsPage/2024/202409/20240912/20240912090000000114/ea86f808-66e1-4ac0-bc5b-5d86d81294cf/yiyangzhuanqu9/index.html?cityid=310000&userCityId=310000&ADID=20240806080000000015" class="btn">查看详情</a>
-            </div>
-        </div>
-    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                isRetirementFinanceInfoVisible: false
+            },
+            methods: {
+                showRetirementFinanceInfo() {
+                    this.isRetirementFinanceInfoVisible = !this.isRetirementFinanceInfoVisible;
+                }
+            }
+        });
+    </script>
 </body>
 </html>
